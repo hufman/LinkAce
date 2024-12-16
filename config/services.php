@@ -80,7 +80,7 @@ return [
         'enabled' => env('SSO_GOOGLE_ENABLED', false),
         'client_id' => env('SSO_GOOGLE_CLIENT_ID'),
         'client_secret' => env('SSO_GOOGLE_CLIENT_SECRET'),
-        'redirect' => '/auth/sso/{provider}/callback',
+        'redirect' => '/auth/sso/google/callback',
     ],
 
     'github' => [

@@ -32,7 +32,7 @@ class SocialiteController extends Controller
             }
 
             $user->update([
-                'name' => $authUser->getNickname(),
+                'name' => $authUser->getNickname() ?? $authUser->getEmail(),
                 'sso_id' => $authUser->id,
                 'sso_provider' => $provider,
                 'sso_token' => $authUser->token ?? null,
@@ -46,7 +46,7 @@ class SocialiteController extends Controller
                 'sso_id' => $authUser->getId(),
                 'sso_provider' => $provider,
             ], [
-                'name' => $authUser->getNickname(),
+                'name' => $authUser->getNickname() ?? $authUser->getEmail(),
                 'email' => $authUser->getEmail(),
                 'sso_id' => $authUser->getId(),
                 'sso_provider' => $provider,
